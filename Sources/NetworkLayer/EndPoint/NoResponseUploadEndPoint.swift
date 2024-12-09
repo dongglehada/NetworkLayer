@@ -10,7 +10,7 @@ import OSLog
 
 import Alamofire
 
-class NoResponseUploadEndPoint: Uploadable {
+public class NoResponseUploadEndPoint: Uploadable {
     var baseURL: String
     var path: String
     var method: HTTPMethod

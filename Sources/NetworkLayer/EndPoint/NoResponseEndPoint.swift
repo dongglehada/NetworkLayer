@@ -10,7 +10,7 @@ import OSLog
 
 import Alamofire
 
-class NoResponseEndPoint: Requestable {
+public class NoResponseEndPoint: Requestable {
     
     var baseURL: String
     var path: String

@@ -10,7 +10,7 @@ import OSLog
 
 import Alamofire
 
-class Endpoint<R: Decodable>: Requestable, Responsable {
+public class Endpoint<R: Decodable>: Requestable, Responsable {
     typealias Response = R
     
     var baseURL: String

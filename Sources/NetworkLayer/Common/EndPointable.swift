@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EndPointable {
+public protocol EndPointable {
     func getUrlRequest() throws -> URLRequest
     func buildURL() throws -> URL
 }

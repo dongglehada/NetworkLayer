@@ -10,7 +10,7 @@ import OSLog
 
 import Alamofire
 
-protocol Uploadable: EndPointable {
+public protocol Uploadable: EndPointable {
     var baseURL: String { get }
     var path: String { get }
     var method: HTTPMethod { get }

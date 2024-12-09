@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
-struct UploadProvider: Provider {
+public struct UploadProvider: Provider {
     
     func requestData<R: Decodable, E: EndPointable & Responsable>(
         with endpoint: E, interceptor: RequestInterceptor? = nil
