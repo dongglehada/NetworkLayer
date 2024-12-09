@@ -21,7 +21,7 @@ public class Endpoint<R: Decodable>: Requestable, Responsable {
     var headers: [String: String]?
     var sampleData: Data?
     
-    init(
+    public init(
         baseURL: String,
         path: String = "",
         method: HTTPMethod = .get,

@@ -17,7 +17,7 @@ public protocol Provider {
     ///   - endpoint: 요청할 엔드포인트
     ///   - interceptor: 요청에 사용할 RequestInterceptor (옵셔널)
     /// - Returns: 요청에 대한 결과를 Observable로 반환
-    func requestData<R: Decodable, E: EndPointable & Responsable>(with endpoint: E, interceptor: RequestInterceptor?)
+    public func requestData<R: Decodable, E: EndPointable & Responsable>(with endpoint: E, interceptor: RequestInterceptor?)
     -> Observable<R> where R == E.Response
     
     /// 네트워크 요청을 수행하고 결과를 반환하는 메서드
@@ -25,5 +25,5 @@ public protocol Provider {
     ///   - request: 요청할 Requestable 객체
     ///   - interceptor: 요청에 사용할 RequestInterceptor (옵셔널)
     /// - Returns: 요청에 대한 결과를 Completable로 반환
-    func request<E: EndPointable>(with request: E, interceptor: RequestInterceptor?) -> Completable
+    public func request<E: EndPointable>(with request: E, interceptor: RequestInterceptor?) -> Completable
 }

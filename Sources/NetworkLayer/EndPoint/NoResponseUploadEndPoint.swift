@@ -18,7 +18,7 @@ public class NoResponseUploadEndPoint: Uploadable {
     var jsonData: [String: Any]?
     var headers: [String: String]?
     
-    init(
+    public init(
         baseURL: String,
         path: String,
         method: HTTPMethod,

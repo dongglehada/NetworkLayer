@@ -12,7 +12,7 @@ import RxSwift
 
 public struct UploadProvider: Provider {
     
-    func requestData<R: Decodable, E: EndPointable & Responsable>(
+    public func requestData<R: Decodable, E: EndPointable & Responsable>(
         with endpoint: E, interceptor: RequestInterceptor? = nil
     )-> Observable<R> where R == E.Response {
         return Observable.create { observer in
@@ -49,7 +49,7 @@ public struct UploadProvider: Provider {
         }
     }
     
-    func request<E: EndPointable>(
+    public func request<E: EndPointable>(
         with request: E,
         interceptor: RequestInterceptor? = nil
     ) -> Completable {

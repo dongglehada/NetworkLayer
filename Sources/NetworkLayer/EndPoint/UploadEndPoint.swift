@@ -20,7 +20,7 @@ public class UploadEndPoint<R: Decodable>: Uploadable, Responsable {
     var jsonData: [String: Any]?
     var headers: [String: String]?
     
-    init(
+    public init(
         baseURL: String,
         path: String,
         method: HTTPMethod,
