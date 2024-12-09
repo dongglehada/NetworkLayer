@@ -12,6 +12,8 @@ import RxSwift
 
 public struct UploadProvider: Provider {
     
+    public init() { }
+    
     public func requestData<R: Decodable, E: EndPointable & Responsable>(
         with endpoint: E, interceptor: RequestInterceptor? = nil
     )-> Observable<R> where R == E.Response {
