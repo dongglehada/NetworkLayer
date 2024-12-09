@@ -11,13 +11,13 @@ import OSLog
 import Alamofire
 
 public protocol Requestable: EndPointable {
-    public var baseURL: String { get }
-    public var path: String { get }
-    public var method: HTTPMethod { get }
-    public var queryParameters: Encodable? { get }
-    public var bodyParameters: Encodable? { get }
-    public var headers: [String: String]? { get }
-    public var sampleData: Data? { get }
+    var baseURL: String { get }
+    var path: String { get }
+    var method: HTTPMethod { get }
+    var queryParameters: Encodable? { get }
+    var bodyParameters: Encodable? { get }
+    var headers: [String: String]? { get }
+    var sampleData: Data? { get }
 }
 
 extension Requestable {

@@ -11,14 +11,14 @@ import OSLog
 import Alamofire
 
 public protocol Uploadable: EndPointable {
-    public var baseURL: String { get }
-    public var path: String { get }
-    public var method: HTTPMethod { get }
-    public var queryParameters: Encodable? { get }
-    public var jsonData: [String: Any]? { get }
-    public var headers: [String: String]? { get }
+    var baseURL: String { get }
+    var path: String { get }
+    var method: HTTPMethod { get }
+    var queryParameters: Encodable? { get }
+    var jsonData: [String: Any]? { get }
+    var headers: [String: String]? { get }
     
-    public func asMultipartFormData(multipartFormData: MultipartFormData)
+    func asMultipartFormData(multipartFormData: MultipartFormData)
 }
 
 extension Uploadable {

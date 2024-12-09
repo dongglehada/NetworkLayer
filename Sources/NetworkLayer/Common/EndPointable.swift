@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol EndPointable {
-    public func getUrlRequest() throws -> URLRequest
-    public func buildURL() throws -> URL
+    func getUrlRequest() throws -> URLRequest
+    func buildURL() throws -> URL
 }
