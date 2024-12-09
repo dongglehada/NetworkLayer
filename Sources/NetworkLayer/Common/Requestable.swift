@@ -11,17 +11,17 @@ import OSLog
 import Alamofire
 
 public protocol Requestable: EndPointable {
-    var baseURL: String { get }
-    var path: String { get }
-    var method: HTTPMethod { get }
-    var queryParameters: Encodable? { get }
-    var bodyParameters: Encodable? { get }
-    var headers: [String: String]? { get }
-    var sampleData: Data? { get }
+    public var baseURL: String { get }
+    public var path: String { get }
+    public var method: HTTPMethod { get }
+    public var queryParameters: Encodable? { get }
+    public var bodyParameters: Encodable? { get }
+    public var headers: [String: String]? { get }
+    public var sampleData: Data? { get }
 }
 
 extension Requestable {
-    func getUrlRequest() throws -> URLRequest {
+    public func getUrlRequest() throws -> URLRequest {
         let url = try buildURL()
         os_log("\(url) URL 생성")
         
@@ -39,7 +39,7 @@ extension Requestable {
         return urlRequest
     }
     
-    func buildURL() throws -> URL {
+    public func buildURL() throws -> URL {
         // baseURL + path
         let fullPath = "\(baseURL)\(path)"
         guard var urlComponents = URLComponents(string: fullPath) else {

@@ -12,13 +12,13 @@ import Alamofire
 
 public class NoResponseEndPoint: Requestable {
     
-    var baseURL: String
-    var path: String
-    var method: HTTPMethod
-    var queryParameters: Encodable?
-    var bodyParameters: Encodable?
-    var headers: [String: String]?
-    var sampleData: Data?
+    public var baseURL: String
+    public var path: String
+    public var method: HTTPMethod
+    public var queryParameters: Encodable?
+    public var bodyParameters: Encodable?
+    public var headers: [String: String]?
+    public var sampleData: Data?
     
     public init(
         baseURL: String,
@@ -38,7 +38,7 @@ public class NoResponseEndPoint: Requestable {
         self.sampleData = sampleData
     }
     
-    func getUrlRequest() throws -> URLRequest {
+    public func getUrlRequest() throws -> URLRequest {
         let url = try buildURL()
         os_log("\(url) URL 생성")
         
@@ -56,7 +56,7 @@ public class NoResponseEndPoint: Requestable {
         return urlRequest
     }
     
-    func buildURL() throws -> URL {
+    public func buildURL() throws -> URL {
         // baseURL + path
         let fullPath = "\(baseURL)\(path)"
         guard var urlComponents = URLComponents(string: fullPath) else {

@@ -11,15 +11,15 @@ import OSLog
 import Alamofire
 
 public class Endpoint<R: Decodable>: Requestable, Responsable {
-    typealias Response = R
+    public typealias Response = R
     
-    var baseURL: String
-    var path: String
-    var method: HTTPMethod
-    var queryParameters: Encodable?
-    var bodyParameters: Encodable?
-    var headers: [String: String]?
-    var sampleData: Data?
+    public var baseURL: String
+    public var path: String
+    public var method: HTTPMethod
+    public var queryParameters: Encodable?
+    public var bodyParameters: Encodable?
+    public var headers: [String: String]?
+    public var sampleData: Data?
     
     public init(
         baseURL: String,

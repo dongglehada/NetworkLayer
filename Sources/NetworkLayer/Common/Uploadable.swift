@@ -11,19 +11,19 @@ import OSLog
 import Alamofire
 
 public protocol Uploadable: EndPointable {
-    var baseURL: String { get }
-    var path: String { get }
-    var method: HTTPMethod { get }
-    var queryParameters: Encodable? { get }
-    var jsonData: [String: Any]? { get }
-    var headers: [String: String]? { get }
+    public var baseURL: String { get }
+    public var path: String { get }
+    public var method: HTTPMethod { get }
+    public var queryParameters: Encodable? { get }
+    public var jsonData: [String: Any]? { get }
+    public var headers: [String: String]? { get }
     
-    func asMultipartFormData(multipartFormData: MultipartFormData)
+    public func asMultipartFormData(multipartFormData: MultipartFormData)
 }
 
 extension Uploadable {
     
-    func getUrlRequest() throws -> URLRequest {
+    public func getUrlRequest() throws -> URLRequest {
         let url = try buildURL()
         os_log("\(url) URL 생성")
         
@@ -35,7 +35,7 @@ extension Uploadable {
         return urlRequest
     }
     
-    func buildURL() throws -> URL {
+    public func buildURL() throws -> URL {
         // baseURL + path
         let fullPath = "\(baseURL)\(path)"
         guard var urlComponents = URLComponents(string: fullPath) else {
@@ -54,7 +54,7 @@ extension Uploadable {
         return url
     }
     
-    func asMultipartFormData(multipartFormData: MultipartFormData) {
+    public func asMultipartFormData(multipartFormData: MultipartFormData) {
         // JSON 데이터를 각 키-값 필드로 추가
         if let jsonData = jsonData {
             // jsonData는 [String: Any] 형태로 가정

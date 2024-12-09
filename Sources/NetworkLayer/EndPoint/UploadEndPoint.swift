@@ -11,14 +11,14 @@ import OSLog
 import Alamofire
 
 public class UploadEndPoint<R: Decodable>: Uploadable, Responsable {
-    typealias Response = R
+    public typealias Response = R
     
-    var baseURL: String
-    var path: String
-    var method: HTTPMethod
-    var queryParameters: Encodable?
-    var jsonData: [String: Any]?
-    var headers: [String: String]?
+    public var baseURL: String
+    public var path: String
+    public var method: HTTPMethod
+    public var queryParameters: Encodable?
+    public var jsonData: [String: Any]?
+    public var headers: [String: String]?
     
     public init(
         baseURL: String,
